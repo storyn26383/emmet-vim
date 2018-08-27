@@ -399,16 +399,16 @@ function! emmet#getFileType(...) abort
       endif
     endfor
   endif
-  if type =~# 'html\|vue'
+  if type =~# '^\(html\|vue\)'
     let pos = emmet#util#getcurpos()
     let type = synIDattr(synID(pos[1], pos[2], 1), 'name')
-    if type =~# '^\(s\?css\|style\)'
+    if type =~# '^\(css\|scss\)\w'
       let type = 'css'
     endif
-    if type =~# '^html'
+    if type =~# '^html\w'
       let type = 'html'
     endif
-    if type =~# '^\(js\|javascript\)'
+    if type =~# '^\(js\|javaScript\)'
       let type = 'javascript'
     endif
     if len(type) ==# 0 && type =~# '^xml'
