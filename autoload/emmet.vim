@@ -401,14 +401,6 @@ function! emmet#getFileType(...) abort
   endif
   if type ==# 'vue'
     let type = vue#IdentifySyntaxRegion()
-
-    if type =~# '^s\?css$'
-      let type = 'css'
-    elseif type =~# '^html\|pug$'
-      let type = 'html'
-    elseif type =~# '^js$'
-      let type = 'javascript'
-    endif
   endif
   if type ==# 'html'
     let pos = emmet#util#getcurpos()
