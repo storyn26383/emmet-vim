@@ -2041,6 +2041,9 @@ let s:emmet_settings = {
 \    'vue': {
 \        'extends': 'html',
 \    },
+\    'stylus': {
+\        'extends': 'css'
+\    },
 \}
 
 if exists('g:user_emmet_settings')
